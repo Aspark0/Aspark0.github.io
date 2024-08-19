@@ -27,13 +27,40 @@
             <p class="pastitem"><a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></p>
           </article>
         </section>
+        <section>
+          <h2>Other Interesting Projects</h2>
+          <article class="item">
+            <p class="otheritem"><a href="https://github.com/hacksider/roop-cam" target="_blank">Real Time Face Swap</a></p>
+          </article>
+          <article class="item">
+            <p class="otheritem"><a href="https://github.com/pirj/noclamshell" target="_blank">No Clamshell (Mac)</a></p>
+          </article>
+        </section>
       </main>
       <hr class="bottom-line">
       <footer>
-        <p>
+        <p>↓Time until end of school↓</p>
+        <p id="clock"></p>
+        <script>
+        var countDownDate = new Date("June 12, 2025 13:00:00").getTime();
+        var x = setInterval(function() {
+          var now = new Date().getTime();
+          var distance = countDownDate - now;
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("clock").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("clock").innerHTML = "SCHOOL OVER!!!";
+          }
+        }, 1000);
+        </script>
+        <p class="last">
           <a href="https://refleco.github.io/" target="_blank">This website</a>
         </p>
-        <p class="last">Thanks to <a href="https://www.freecodecamp.org/" target="_blank">Free Code Camp</a> for their HTML and CSS courses</p>
       </footer>
     </div>
   </body>

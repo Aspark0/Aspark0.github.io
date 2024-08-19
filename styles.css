@@ -58,7 +58,7 @@ body {
     font-size: 18px;
   }
   
-  .currentitem, .pastitem {
+  .currentitem, .pastitem, .otheritem {
     text-align: auto;
     width: 100%;
   }
