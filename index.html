@@ -3,67 +3,73 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Justin Wu | GitHub</title>
-    <link rel="icon" href="galaxy.jpeg">
+    <title>Justin Wu | Portfolio</title>
+    <link rel="icon" href="galaxy.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <div class="name">
+    <div class="container">
         <header>
-            <h1>Justin</h1>
-            <p class="aboutme">My name is Justin Wu, and I am a high school student who enjoys programming and swimming, among other activities.</p>
-            <hr>
+            <div class="icon-wrapper">
+                <img src="galaxy.jpeg" alt="Galaxy Icon" class="circular-icon">
+            </div>
+            <h1>Justin Wu</h1>
+            <p class="tagline">High School Student | Programmer | Swimmer</p>
         </header>
         <main>
-            <section>
-                <h2>Current Projects</h2>
-                <article class="item">
-                    <p class="currentitem"><a href="https://refleco.github.io/" target="_blank">Website (HTML and CSS)</a></p>
-                </article>
+            <section class="about">
+                <h2>About Me</h2>
+                <p>I'm a high school student passionate about programming and swimming. I love exploring new technologies and challenging myself with interesting projects.</p>
             </section>
-            <section>
-                <h2>Past Projects</h2>
-                <article class="item">
-                    <p class="pastitem"><a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a></p>
-                </article>
-                <article class="item">
-                    <p class="pastitem"><a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></p>
-                </article>
-            </section>
-            <section>
-                <h2>Other Interesting Projects</h2>
-                <article class="item">
-                    <p class="otheritem"><a href="https://github.com/hacksider/roop-cam" target="_blank">Real Time Face Swap</a></p>
-                </article>
-                <article class="item">
-                    <p class="otheritem"><a href="https://github.com/pirj/noclamshell" target="_blank">No Clamshell (Mac)</a></p>
-                </article>
+            <section class="projects">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <article class="project-item current">
+                        <h3>Current Project</h3>
+                        <p><a href="https://refleco.github.io/" target="_blank">Personal Website (HTML/CSS)</a></p>
+                    </article>
+                    <article class="project-item past">
+                        <h3>Past Projects</h3>
+                        <ul>
+                            <li><a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a></li>
+                            <li><a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></li>
+                        </ul>
+                    </article>
+                    <article class="project-item other">
+                        <h3>Interesting Finds</h3>
+                        <ul>
+                            <li><a href="https://github.com/hacksider/roop-cam" target="_blank">Real Time Face Swap</a></li>
+                            <li><a href="https://github.com/pirj/noclamshell" target="_blank">No Clamshell (Mac)</a></li>
+                        </ul>
+                    </article>
+                </div>
             </section>
         </main>
-        <hr class="bottom-line">
         <footer>
-            <p>↓ Time until end of school ↓</p>
-            <p id="clock"></p>
-            <script>
-                var countDownDate = new Date("June 12, 2025 13:00:00").getTime();
-                var x = setInterval(function() {
-                    var now = new Date().getTime();
-                    var distance = countDownDate - now;
-                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    document.getElementById("clock").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("clock").innerHTML = "SCHOOL OVER!!!";
-                    }
-                }, 1000);
-            </script>
-            <p class="last">
-                <a href="https://refleco.github.io/" target="_blank">This website</a>
-            </p>
+            <div class="countdown">
+                <p>Time until end of school:</p>
+                <p id="clock"></p>
+            </div>
+            <p class="copyright">© 2024 Justin Wu | <a href="https://refleco.github.io/" target="_blank">Portfolio</a></p>
         </footer>
     </div>
+    <script>
+        var countDownDate = new Date("June 12, 2025 13:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("clock").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("clock").innerHTML = "SCHOOL'S OUT!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
