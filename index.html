@@ -4,16 +4,303 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Wu | Portfolio</title>
-    <link rel="icon" type="image/jpeg" href="galaxy.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0d1f3d; /* Fallback color */
+            background-image: url('earth.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(13, 31, 61, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+        }
+
+        .icon-wrapper {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .circular-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .circular-icon:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #5dade2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p, .skills p, .interests p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style-type: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category li i {
+            margin-right: 0.5rem;
+            color: #3498db;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-item {
+            background-color: rgba(25, 50, 95, 0.8);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-item h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .project-item h4 {
+            margin: 0.5rem 0;
+        }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .project-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+            transition: transform 0.3s ease;
+            margin: auto;
+        }
+
+        .project-item ul {
+            padding-left: 1.2rem;
+        }
+
+        .project-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .interest-list, .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        .interest-list li, .contact-list li {
+            background-color: rgba(52, 152, 219, 0.2);
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .interest-list li:hover, .contact-list li:hover {
+            transform: translateY(-5px);
+            background-color: rgba(52, 152, 219, 0.4);
+        }
+
+        .interest-list li i, .contact-list li i {
+            margin-right: 0.5rem;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #5dade2;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #a0a0a0;
+        }
+
+        .countdown {
+            background-color: rgba(52, 152, 219, 0.8);
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown:hover {
+            transform: scale(1.05);
+        }
+
+        #clock {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .interest-list, .contact-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .interest-list li, .contact-list li {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="icon-wrapper">
-                <img src="galaxy.jpeg" alt="Galaxy Icon" class="circular-icon">
+                <img src="https://images.unsplash.com/photo-1590907047706-ee9c08cf3189?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Profile Picture" class="circular-icon">
             </div>
             <h1>Justin Wu</h1>
             <p class="tagline">High School Student | Programmer | Swimmer</p>
@@ -38,19 +325,19 @@
                     <div class="skill-category">
                         <h3>Programming</h3>
                         <ul>
-                            <li><i class="fab fa-css3-alt"></i> CSS</li>
-                            <li><i class="fab fa-html5"></i> HTML</li>
                             <li><i class="fab fa-java"></i> Java</li>
                             <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fab fa-html5"></i> HTML</li>
+                            <li><i class="fab fa-css3-alt"></i> CSS</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Sciences</h3>
                         <ul>
                             <li><i class="fas fa-dna"></i> Biology</li>
-                            <li><i class="fas fa-flask"></i> Chemistry</li>
-                            <li><i class="fas fa-cogs"></i> Engineering</li>
                             <li><i class="fas fa-chart-bar"></i> Statistics</li>
+                            <li><i class="fas fa-cogs"></i> Engineering</li>
+                            <li><i class="fas fa-flask"></i> Chemistry</li>
                         </ul>
                     </div>
                 </div>
@@ -61,9 +348,9 @@
                     <article class="project-item current">
                         <h3>Current Project</h3>
                         <div class="project-content">
-                            <img src="galaxy.jpeg" alt="Personal Website Thumbnail" class="project-image">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Personal Website Thumbnail" class="project-image">
                             <div>
-                                <h4><a href="https://refleco.github.io/" target="_blank">Personal Website (HTML/CSS)</a></h4>
+                                <h4><a href="https://github.com/yourusername/personal-website" target="_blank">Personal Website (HTML/CSS)</a></h4>
                                 <p>A showcase of my skills and projects, built from scratch using HTML and CSS.</p>
                             </div>
                         </div>
@@ -72,11 +359,11 @@
                         <h3>Past Projects</h3>
                         <div class="project-content">
                             <div>
-                                <h4><a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a></h4>
+                                <h4><a href="https://github.com/yourusername/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a></h4>
                                 <p>An implementation of the Knight's Tour problem using backtracking algorithm.</p>
                             </div>
                             <div>
-                                <h4><a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></h4>
+                                <h4><a href="https://github.com/yourusername/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></h4>
                                 <p>A simulation of Conway's Game of Life using Python and Pygame.</p>
                             </div>
                         </div>
@@ -86,18 +373,18 @@
             <section id="interests" class="interests">
                 <h2>Interests</h2>
                 <ul class="interest-list">
+                    <li><i class="fas fa-swimmer"></i> Swimming</li>
+                    <li><i class="fas fa-rocket"></i> Space Exploration</li>
                     <li><i class="fas fa-microscope"></i> Biology</li>
                     <li><i class="fas fa-key"></i> Cryptology</li>
-                    <li><i class="fas fa-rocket"></i> Space Exploration</li>
-                    <li><i class="fas fa-swimmer"></i> Swimming</li>
                 </ul>
             </section>
             <section id="contact" class="contact">
                 <h2>Contact Me</h2>
                 <ul class="contact-list">
-                    <li><i class="fab fa-github"></i> <a href="https://github.com/refleco" target="_blank">GitHub</a></li>
-                    <li><i class="fab fa-linkedin"></i> <a href="https://github.com/refleco" target="_blank">LinkedIn</a></li>
-                    <li><i class="fab fa-twitter"></i> <a href="https://github.com/refleco" target="_blank">Twitter</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="#" target="_blank">LinkedIn</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="#" target="_blank">Twitter</a></li>
                 </ul>
             </section>
         </main>
@@ -106,7 +393,7 @@
                 <p>Time until end of school:</p>
                 <p id="clock"></p>
             </div>
-            <p class="copyright">© 2024 Justin Wu | <a href="https://refleco.github.io/" target="_blank">Portfolio</a></p>
+            <p class="copyright">© 2024 Justin Wu | <a href="https://github.com/yourusername/personal-website" target="_blank">Portfolio</a></p>
         </footer>
     </div>
     <script>
