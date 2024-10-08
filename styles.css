@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   color: #e0e0e0;
-  background-image: url('earth.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -17,6 +17,12 @@ body {
   background-color: rgba(13, 31, 61, 0.9);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 header {
@@ -37,6 +43,11 @@ header {
   object-fit: cover;
   border: 3px solid #3498db;
   box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.circular-icon:hover {
+  transform: scale(1.1);
 }
 
 h1 {
@@ -50,6 +61,29 @@ h1 {
   color: #a0a0a0;
 }
 
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #5dade2;
+}
+
 h2 {
   font-size: 1.8rem;
   color: #ffffff;
@@ -58,9 +92,30 @@ h2 {
   margin-top: 2rem;
 }
 
-.about p {
+.about p, .skills p, .interests p {
   font-size: 1.1rem;
   color: #e0e0e0;
+}
+
+.skill-list, .interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.skill-list li, .interest-list li {
+  background-color: rgba(52, 152, 219, 0.2);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-list li:hover, .interest-list li:hover {
+  transform: translateY(-5px);
+  background-color: rgba(52, 152, 219, 0.4);
 }
 
 .project-grid {
@@ -121,6 +176,11 @@ footer {
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.countdown:hover {
+  transform: scale(1.05);
 }
 
 #clock {
@@ -149,5 +209,14 @@ footer {
 
   .project-grid {
       grid-template-columns: 1fr;
+  }
+
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul li {
+      margin: 0.5rem 0;
   }
 }

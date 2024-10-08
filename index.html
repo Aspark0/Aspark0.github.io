@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Justin Wu | Portfolio</title>
-    <link rel="icon" href="galaxy.jpeg" type="image/jpeg">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet"/>
-    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
     <div class="container">
@@ -18,23 +17,49 @@
             <h1>Justin Wu</h1>
             <p class="tagline">High School Student | Programmer | Swimmer</p>
         </header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#interests">Interests</a></li>
+            </ul>
+        </nav>
         <main>
-            <section class="about">
+            <section id="about" class="about">
                 <h2>About Me</h2>
-                <p>I'm a high school student passionate about programming and swimming. I love exploring new technologies and challenging myself with interesting projects.</p>
+                <p>I'm a high school student passionate about programming and swimming. I love exploring new technologies and challenging myself with interesting projects. My goal is to make a positive impact on the world.</p>
             </section>
-            <section class="projects">
+            <section id="skills" class="skills">
+                <h2>Skills</h2>
+                <ul class="skill-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                    <li>Biology</li>
+                    <li>Statistics</li>
+                    <li>Engineering</li>
+                </ul>
+            </section>
+            <section id="projects" class="projects">
                 <h2>Projects</h2>
                 <div class="project-grid">
                     <article class="project-item current">
                         <h3>Current Project</h3>
                         <p><a href="https://refleco.github.io/" target="_blank">Personal Website (HTML/CSS)</a></p>
+                        <p>A showcase of my skills and projects, built from scratch using HTML and CSS.</p>
                     </article>
                     <article class="project-item past">
                         <h3>Past Projects</h3>
                         <ul>
-                            <li><a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a></li>
-                            <li><a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></li>
+                            <li>
+                                <a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a>
+                                <p>An implementation of the Knight's Tour problem using backtracking algorithm.</p>
+                            </li>
+                            <li>
+                                <a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a>
+                                <p>A simulation of Conway's Game of Life using Python and Pygame.</p>
+                            </li>
                         </ul>
                     </article>
                     <article class="project-item other">
@@ -45,6 +70,15 @@
                         </ul>
                     </article>
                 </div>
+            </section>
+            <section id="interests" class="interests">
+                <h2>Interests</h2>
+                <ul class="interest-list">
+                    <li>Swimming</li>
+                    <li>Space Exploration</li>
+                    <li>Biology</li>
+                    <li>Cryptology</li>
+                </ul>
             </section>
         </main>
         <footer>
