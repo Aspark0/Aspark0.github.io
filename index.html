@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Wu | Portfolio</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/jpeg" href="galaxy.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -23,61 +24,80 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#interests">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <main>
             <section id="about" class="about">
                 <h2>About Me</h2>
-                <p>I'm a high school student passionate about programming and swimming. I love exploring new technologies and challenging myself with interesting projects. My goal is to make a positive impact on the world.</p>
+                <p>I'm a high school student passionate about programming and swimming. I love exploring new technologies and challenging myself with interesting projects. My goal is to make a positive impact on the world through technology and science.</p>
             </section>
             <section id="skills" class="skills">
                 <h2>Skills</h2>
-                <ul class="skill-list">
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>HTML/CSS</li>
-                    <li>Biology</li>
-                    <li>Statistics</li>
-                    <li>Engineering</li>
-                </ul>
+                <div class="skill-grid">
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li><i class="fab fa-css3-alt"></i> CSS</li>
+                            <li><i class="fab fa-html5"></i> HTML</li>
+                            <li><i class="fab fa-java"></i> Java</li>
+                            <li><i class="fab fa-python"></i> Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Sciences</h3>
+                        <ul>
+                            <li><i class="fas fa-dna"></i> Biology</li>
+                            <li><i class="fas fa-flask"></i> Chemistry</li>
+                            <li><i class="fas fa-cogs"></i> Engineering</li>
+                            <li><i class="fas fa-chart-bar"></i> Statistics</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
             <section id="projects" class="projects">
                 <h2>Projects</h2>
                 <div class="project-grid">
                     <article class="project-item current">
                         <h3>Current Project</h3>
-                        <p><a href="https://refleco.github.io/" target="_blank">Personal Website (HTML/CSS)</a></p>
-                        <p>A showcase of my skills and projects, built from scratch using HTML and CSS.</p>
+                        <div class="project-content">
+                            <img src="galaxy.jpeg" alt="Personal Website Thumbnail" class="project-image">
+                            <div>
+                                <h4><a href="https://refleco.github.io/" target="_blank">Personal Website (HTML/CSS)</a></h4>
+                                <p>A showcase of my skills and projects, built from scratch using HTML and CSS.</p>
+                            </div>
+                        </div>
                     </article>
                     <article class="project-item past">
                         <h3>Past Projects</h3>
-                        <ul>
-                            <li>
-                                <a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a>
+                        <div class="project-content">
+                            <div>
+                                <h4><a href="https://github.com/refleco/Knights-Tour-Java" target="_blank">Knight's Tour (Java)</a></h4>
                                 <p>An implementation of the Knight's Tour problem using backtracking algorithm.</p>
-                            </li>
-                            <li>
-                                <a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a>
+                            </div>
+                            <div>
+                                <h4><a href="https://github.com/refleco/Game-of-Life-Python" target="_blank">Game of Life (Python)</a></h4>
                                 <p>A simulation of Conway's Game of Life using Python and Pygame.</p>
-                            </li>
-                        </ul>
-                    </article>
-                    <article class="project-item other">
-                        <h3>Interesting Finds</h3>
-                        <ul>
-                            <li><a href="https://github.com/hacksider/roop-cam" target="_blank">Real Time Face Swap</a></li>
-                            <li><a href="https://github.com/pirj/noclamshell" target="_blank">No Clamshell (Mac)</a></li>
-                        </ul>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </section>
             <section id="interests" class="interests">
                 <h2>Interests</h2>
                 <ul class="interest-list">
-                    <li>Swimming</li>
-                    <li>Space Exploration</li>
-                    <li>Biology</li>
-                    <li>Cryptology</li>
+                    <li><i class="fas fa-microscope"></i> Biology</li>
+                    <li><i class="fas fa-key"></i> Cryptology</li>
+                    <li><i class="fas fa-rocket"></i> Space Exploration</li>
+                    <li><i class="fas fa-swimmer"></i> Swimming</li>
+                </ul>
+            </section>
+            <section id="contact" class="contact">
+                <h2>Contact Me</h2>
+                <ul class="contact-list">
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/refleco" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://github.com/refleco" target="_blank">LinkedIn</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://github.com/refleco" target="_blank">Twitter</a></li>
                 </ul>
             </section>
         </main>
